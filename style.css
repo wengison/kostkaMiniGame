@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    color: black;
+    font-family: 'Rampart One', cursive;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top left, crimson, orange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    background: white;
+    box-shadow: black  0 0 10px 2px;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+.game-desk-background {
+    width: 90%;
+    height: 95%;
+    background: whitesmoke;
+    opacity: .2;
+    position: fixed;
+    z-index: 0;
+}
+
+.game-desk {
+    width: 90%;
+    height: 95%;
+    border: solid white 1px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.top {
+    height: 25%;
+    border: solid white 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.center {
+    margin: auto;
+    width: 85%;
+    height: 50%;
+    border: solid white 1px;
+}
+.bottom {
+    height: 25%;
+    border: solid white 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*--------------------------------------------------------------*/
+
+/*top*/
+
+.top-left,.top-right {
+    font-size: 2em;
+    color: white;
+}
+
+/*center*/
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-kostka {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    background-image: none;
+    background-size: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color:rgba(0,0,0, .85);
+}
+
+.rotate {
+    transform: rotate(360deg);
+    transition: 1.5s;
+}
+
+.dontrotate {
+    transform: rotate(-360deg);
+    transition: 1.5s;
+}
+
+/*-------------------------*/
+
+
+
+/*bottom*/
+.bottom-center {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.bottom-center-play,.bottom-center-reset {
+    width: 100px;
+    height: 25px;
+    border-radius: 12px;
+    background-color: rgba(0,0,0, .25);
+    color: white;
+    border: solid white 2px;
+    font-size: .9em;
+    letter-spacing: .5px;
+    font-family: serif;
+    font-weight: bolder;
+    cursor: pointer;
+    transform: scale(110%);
+    
+}
+
+.bottom-center-play:hover,.bottom-center-reset:hover {
+    transform: scale(135%);
+    font-size: .9em;
+}
+
+.bottom-left,.bottom-right {
+    width: 250px;
+    font-family: serif;
+    font-size: 1.5em;
+}
