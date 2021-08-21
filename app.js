@@ -16,7 +16,7 @@ function randomKostka() {
     const randomNumber = Math.ceil(Math.random()*6)
     function changeKostka() {
         kostka.addEventListener('transitionend', ()=> {
-            kostka.style.backgroundImage = 'url(' +randomNumber+'.jpg)'
+            kostka.style.backgroundImage = 'url(jpg/' +randomNumber+'.jpg)'
         })
         
     }
