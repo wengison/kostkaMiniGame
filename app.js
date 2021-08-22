@@ -2,7 +2,8 @@
 const playBtn = document.querySelector('.bottom-center-play')
 const resetBtn = document.querySelector('.bottom-center-reset')
 const kostka = document.querySelector('.center-kostka')
-
+const current1 = document.querySelector('.total1')
+const current2 = document.querySelector('.total2')
 
 //BASIC LISTENERS
 playBtn.addEventListener('click', randomKostka)
@@ -21,6 +22,16 @@ function randomKostka() {
             kostka.style.backgroundImage = 'url(jpg/' +randomNumber+'.jpg)'
         })
     }
+    function totalScore1() {
+        let oldScore1 = parseInt(current1.innerHTML)
+        let newScore1 = oldScore1 + randomKostka()
+        return newScore1
+    }
+    function totalScore2() {
+        let oldScore2 = parseInt(current2.innerHTML)
+        let newScore2 = oldScore2 + randomKostka()
+        return newScore2
+    }
     function rotateKostka() {
         const question = document.querySelector('.fa-question')
         kostka.classList.add('rotate')
@@ -32,6 +43,8 @@ function randomKostka() {
         })
     }
     changeKostka()
+    //totalScore1()
+    //totalScore2()
     rotateKostka()
     return randomNumber
 }
@@ -41,10 +54,10 @@ function randomKostka() {
 function resetFunction() {
     kostka.innerHTML = '<i class="fas fa-question"></i>'
     kostka.style.backgroundImage = 'none'
-    document.querySelector('.top-left').style.color = 'white'
-    document.querySelector('.top-right').style.color = 'white'
-    document.querySelector('.bottom-left').innerHTML = 'Score1:'
-    document.querySelector('.bottom-right').innerHTML = 'Score2:'
+    document.querySelector('.top-left').style.color = 'black'
+    document.querySelector('.top-right').style.color = 'black'
+    document.querySelector('.real-score-left').innerHTML = 0
+    document.querySelector('.real-score-right').innerHTML = 0
     const rightdesk = document.querySelector('.background-white-right')
     const leftdesk = document.querySelector('.background-white-left')
     leftdesk.style.opacity = '.3';
@@ -100,8 +113,8 @@ function changePlayer() {
     changeDesk()*/
     //--------------------------------------------------------------//
     function setScore() {
-        const score1 = document.querySelector('.bottom-left')
-        const score2 = document.querySelector('.bottom-right')
+        const score1 = document.querySelector('.real-score-left')
+        const score2 = document.querySelector('.real-score-right')
 
         if(player1.style.color != 'red' && player2.style.color != 'red')  {
                 function run1() {
@@ -110,14 +123,14 @@ function changePlayer() {
                 setTimeout(run1, 1499)
         } else if (player1.style.color = 'red' && player2.style.color != 'red') {
             function run2() {
-                score1.innerHTML = 'Score: ' + randomKostka()
-                score2.innerHTML = 'Score:'
+                score1.innerHTML = randomKostka()
+                score2.innerHTML = 0
             }
             setTimeout(run2, 1499)
         } else if (player1.style.color != 'red' && player2.style.color == 'red'){
             function run3() {
-                score1.innerHTML = 'Score:' 
-                score2.innerHTML = 'Score: ' + randomKostka()
+                score1.innerHTML = 0
+                score2.innerHTML = randomKostka()
             }
             setTimeout(run3, 1499)
         }

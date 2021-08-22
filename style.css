@@ -26,18 +26,21 @@ body {
     z-index: 10;
 }
 .game-desk-background {
-    width: 90%;
-    height: 100%;
+    width: 80%;
+    height: 90%;
     background: whitesmoke;
     opacity: .2;
     position: fixed;
     z-index: 0;
+    border-radius: 5%;
+    display: none;
 }
 .game-desk-background-white {
-    width: 90%;
-    height: 100%;
+    width: 70%;
+    height: 90%;
     position: absolute;
     display: flex;
+    border-radius: 5%;
 }
 
 .background-white-left {
@@ -47,6 +50,7 @@ body {
     opacity: .3;
     z-index: 0;
     transition: 1.25s;
+    
 }
 .background-white-right {
     width: 50%;
@@ -55,12 +59,12 @@ body {
     opacity: .3;
     z-index: 0;
     transition: .25s;
+    
 }
 
 .game-desk {
     width: 90%;
-    height: 100%;
-    border: solid white 1px;
+    height: 90%;
     overflow: hidden;
     z-index: 1;
 }
@@ -69,21 +73,26 @@ body {
     height: 25%;
     border: solid white 0px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 30%;
 }
 .center {
     margin: auto;
     width: 85%;
     height: 50%;
-    border: solid white 1px;
+    
 }
 .bottom {
     height: 25%;
     border: solid white 0px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: 20px;
+    overflow: hidden;
+    border-radius: 20px;
+    
 }
 
 /*--------------------------------------------------------------*/
@@ -91,8 +100,20 @@ body {
 /*top*/
 
 .top-left,.top-right {
-    font-size: 2em;
-    color: white;
+    font-size: 2.75em;
+    color: black;
+}
+.total {
+    width: 70%;
+    margin-top: 45vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    gap: 50%;
+}
+.total1,.total2 {
+    font-size: 4.25em;
+    color: black;
 }
 
 /*center*/
@@ -133,7 +154,7 @@ body {
 
 /*bottom*/
 .bottom-center {
-    width: 40%;
+    width: 28%;
     height: 100%;
     border-radius: 10px;
     display: flex;
@@ -155,7 +176,7 @@ body {
     font-family: serif;
     font-weight: bolder;
     cursor: pointer;
-    transform: scale(130%);
+    transform: scale(110%);
 }
 
 .bottom-center-play {
@@ -167,12 +188,25 @@ body {
     font-size: .9em;
 }
 .bottom-center-reset:hover {
-    transform: scale(140%);
+    transform: scale(115%);
     font-size: .9em;
 }
 
 .bottom-left,.bottom-right {
-    width: 250px;
+    width: 160px;
+    height: 135px;
     font-family: serif;
     font-size: 1.5em;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    opacity: .8;
+}
+
+li{
+    height: 35%;
+    list-style: none;
 }
