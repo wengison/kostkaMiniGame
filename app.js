@@ -11,6 +11,8 @@ resetBtn.addEventListener('click', resetFunction)
 
 
 //FUNCTIONS
+//------------------------------------------------------------------//
+
 function randomKostka() {
     const question = document.querySelector('.fa-question')
     const randomNumber = Math.ceil(Math.random()*6)
@@ -18,7 +20,6 @@ function randomKostka() {
         kostka.addEventListener('transitionend', ()=> {
             kostka.style.backgroundImage = 'url(jpg/' +randomNumber+'.jpg)'
         })
-        
     }
     function rotateKostka() {
         const question = document.querySelector('.fa-question')
@@ -35,6 +36,8 @@ function randomKostka() {
     return randomNumber
 }
 
+//
+
 function resetFunction() {
     kostka.innerHTML = '<i class="fas fa-question"></i>'
     kostka.style.backgroundImage = 'none'
@@ -42,22 +45,60 @@ function resetFunction() {
     document.querySelector('.top-right').style.color = 'white'
     document.querySelector('.bottom-left').innerHTML = 'Score1:'
     document.querySelector('.bottom-right').innerHTML = 'Score2:'
-
+    const rightdesk = document.querySelector('.background-white-right')
+    const leftdesk = document.querySelector('.background-white-left')
+    leftdesk.style.opacity = '.3';
+    rightdesk.style.opacity = '.3';
 }
 
+//------------------------------------------------------------------------------------------------------------------
+
 function changePlayer() {
-    
+    //--------------------------------------------------------------//
     const player1 = document.querySelector('.top-left')
     const player2 = document.querySelector('.top-right')
+    const rightdesk = document.querySelector('.background-white-right')
+    const leftdesk = document.querySelector('.background-white-left')
+    
+
     if(player1.style.color != 'red' && player2.style.color != 'red')  {
         player1.style.color = 'red'
+        leftdesk.style.opacity= '.5';
+        rightdesk.style.opacity = '.3';
     } else if (player1.style.color = 'red' && player2.style.color != 'red') {
         player2.style.color = 'red'
         player1.style.color = 'white'
+        leftdesk.style.opacity= '.3';
+        rightdesk.style.opacity = '.5';
+        
     } else {
         player2.style.color = 'white'
         player1.style.color = 'red'
+        leftdesk.style.opacity = '.5';
+        rightdesk.style.opacity = '.3';
     }
+    
+    //--------------------------------------------------------------//
+    //gamedesk change
+    
+    /*function changeDesk() {
+        const leftdesk = document.querySelector('.background-white-left')
+        const rightdesk = document.querySelector('.background-white-right')
+        console.log('run')
+
+        if(leftdesk.style.display === 'none' && rightdesk.style.display === 'none') {
+            leftdesk.style.display = 'block'
+            console.log('none')
+        } else if (leftdesk.style.display === 'block') {
+            rightdesk.style.display = 'block'
+            leftdesk.style.display = 'none'
+        } else if (rightdesk.style.display === 'block') {
+            rightdesk.style.display = 'none'
+            leftdesk.style.display = 'block'
+        }
+    }
+    changeDesk()*/
+    //--------------------------------------------------------------//
     function setScore() {
         const score1 = document.querySelector('.bottom-left')
         const score2 = document.querySelector('.bottom-right')

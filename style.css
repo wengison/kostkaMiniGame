@@ -27,16 +27,39 @@ body {
 }
 .game-desk-background {
     width: 90%;
-    height: 95%;
+    height: 100%;
     background: whitesmoke;
     opacity: .2;
     position: fixed;
     z-index: 0;
 }
+.game-desk-background-white {
+    width: 90%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+}
+
+.background-white-left {
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    opacity: .3;
+    z-index: 0;
+    transition: 1.25s;
+}
+.background-white-right {
+    width: 50%;
+    height: 100%;
+    background-color:white;
+    opacity: .3;
+    z-index: 0;
+    transition: .25s;
+}
 
 .game-desk {
     width: 90%;
-    height: 95%;
+    height: 100%;
     border: solid white 1px;
     overflow: hidden;
     z-index: 1;
@@ -110,28 +133,41 @@ body {
 
 /*bottom*/
 .bottom-center {
+    width: 40%;
+    height: 100%;
+    border-radius: 10px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    gap: 15px;
+    gap: 25px;
+    z-index: 5;
 }
 .bottom-center-play,.bottom-center-reset {
     width: 100px;
     height: 25px;
     border-radius: 12px;
-    background-color: rgba(0,0,0, .25);
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgba(255, 8, 0, 1);
     border: solid white 2px;
     font-size: .9em;
     letter-spacing: .5px;
     font-family: serif;
     font-weight: bolder;
     cursor: pointer;
-    transform: scale(110%);
-    
+    transform: scale(130%);
 }
 
-.bottom-center-play:hover,.bottom-center-reset:hover {
-    transform: scale(135%);
+.bottom-center-play {
+    transform: scale(150%);
+}
+
+.bottom-center-play:hover {
+    transform: scale(165%);
+    font-size: .9em;
+}
+.bottom-center-reset:hover {
+    transform: scale(140%);
     font-size: .9em;
 }
 
