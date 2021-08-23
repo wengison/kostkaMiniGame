@@ -164,6 +164,26 @@ body {
     gap: 25px;
     z-index: 5;
 }
+.bottom-center-save {
+    width: 100px;
+    height: 25px;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, .5);
+    color: rgb(20, 20, 20);
+    border: solid white 1px;
+    font-size: .9em;
+    letter-spacing: .5px;
+    font-family: serif;
+    font-weight: bolder;
+    cursor: pointer;
+    transform: scale(130%);
+    position: absolute;
+    top: 100;
+}
+.bottom-center-save:hover {
+    background-color: rgba(255, 255, 255, .9);
+    transition: .2s;
+}
 .bottom-center-play,.bottom-center-reset {
     width: 100px;
     height: 25px;
@@ -177,6 +197,7 @@ body {
     font-weight: bolder;
     cursor: pointer;
     transform: scale(110%);
+    transition: .25s;
 }
 
 .bottom-center-play {
